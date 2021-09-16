@@ -1,0 +1,19 @@
+.nav{
+    height: 40px;
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.493);
+    z-index: 100;
+    font-size: 1.3rem;
+    position: fixed;
+    top: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .nav{
+        height: 20px;
+        font-size: 0.6rem;
+    }
+}

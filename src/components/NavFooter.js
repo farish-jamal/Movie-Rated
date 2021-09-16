@@ -1,19 +1,20 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import MovieIcon from '@material-ui/icons/Movie';
-import TvIcon from '@material-ui/icons/Tv';
-import SearchIcon from '@material-ui/icons/Search';
+import React, { useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import TrendingUpIcon from "@material-ui/icons/TrendingUp";
+import MovieIcon from "@material-ui/icons/Movie";
+import TvIcon from "@material-ui/icons/Tv";
+import SearchIcon from "@material-ui/icons/Search";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles({
   root: {
-    width: '100%',
-    position: 'fixed',
+    width: "100%",
+    position: "fixed",
     bottom: 0,
     backgroundColor: "#fff",
-    boxShadow: '-1px -1px 7px rgba(0, 0, 0, 0.493)',
+    boxShadow: "-1px -1px 7px rgba(0, 0, 0, 0.493)",
     zIndex: 100,
   },
 });
@@ -21,6 +22,14 @@ const useStyles = makeStyles({
 export default function SimpleBottomNavigation() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (value === 0) history.push("/");
+    else if (value === 1) history.push("/movies");
+    else if (value === 2) history.push("/series");
+    else history.push("/search");
+  }, [value, history]);
 
   return (
     <BottomNavigation
@@ -31,7 +40,7 @@ export default function SimpleBottomNavigation() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Trending Now" icon={<TrendingUpIcon />} />
+      <BottomNavigationAction label="Trending" icon={<TrendingUpIcon />} />
       <BottomNavigationAction label="Movies" icon={<MovieIcon />} />
       <BottomNavigationAction label="Tv Shows" icon={<TvIcon />} />
       <BottomNavigationAction label="Search" icon={<SearchIcon />} />

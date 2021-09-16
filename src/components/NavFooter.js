@@ -2,9 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import MovieIcon from '@material-ui/icons/Movie';
+import TvIcon from '@material-ui/icons/Tv';
+import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles({
   root: {
@@ -13,6 +14,7 @@ const useStyles = makeStyles({
     bottom: 0,
     backgroundColor: "#fff",
     boxShadow: '-1px -1px 7px rgba(0, 0, 0, 0.493)',
+    zIndex: 100,
   },
 });
 
@@ -29,10 +31,10 @@ export default function SimpleBottomNavigation() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Movies" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Tv Shows" icon={<LocationOnIcon />} />
-      <BottomNavigationAction label="Search" icon={<LocationOnIcon />} />
+      <BottomNavigationAction label="Trending Now" icon={<TrendingUpIcon />} />
+      <BottomNavigationAction label="Movies" icon={<MovieIcon />} />
+      <BottomNavigationAction label="Tv Shows" icon={<TvIcon />} />
+      <BottomNavigationAction label="Search" icon={<SearchIcon />} />
     </BottomNavigation>
   );
 }

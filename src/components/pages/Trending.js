@@ -1,5 +1,6 @@
 import React,{useState , useEffect} from 'react';
 import MovieCard from '../movieCard/MovieCard';
+import './Trending.css'
 
 function Trending() {
 
@@ -20,8 +21,9 @@ function Trending() {
     }, [])
 
     return (
-        <div>
-            <span className="pageTitle">Trending</span>
+        <>
+        <div className="pageTitle">Trending</div>
+        <div className= "trending">
             <div className="trending">
                 {
                     content && content.map((element) =>
@@ -31,6 +33,7 @@ function Trending() {
                 }
             </div>
         </div>
+        </>
     )
 }
 

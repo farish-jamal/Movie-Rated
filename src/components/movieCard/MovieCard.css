@@ -1,4 +1,5 @@
 .movieCard{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 20%;
@@ -8,7 +9,7 @@
     border-radius: 10px;
     margin: 10px 20px;
     font-size: 1.1rem;
-    overflow: hidden;
+    cursor: pointer;
 }
 .movieCard:hover{
     background-color: rgba(204, 204, 204, 0.548);

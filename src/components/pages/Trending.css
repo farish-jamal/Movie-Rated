@@ -6,7 +6,8 @@
     margin: 10px 0;
 }
 .pageTitle{
+    margin-top: 10px;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 800;
 }

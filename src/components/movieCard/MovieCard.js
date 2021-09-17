@@ -1,3 +1,4 @@
+import { Badge } from "@material-ui/core";
 import React from "react";
 import { img_300, unavialable } from "../../config/config";
 import "./MovieCard.css";
@@ -9,8 +10,9 @@ function MovieCard({ id, title, poster, date, media, vote }) {
       }
   return (
     <div className="movieCard">
+        <Badge style={{position: "absolute", top: 10, right: 19}} badgeContent={media === "tv" ? "Tv Show" : "Movie"} color="primary"></Badge>
       <img src={poster ? `${img_300}/${poster}` : unavialable} alt={title} />
-      <h2 style={{ textAlign: "center" }}>{truncate(title , 15)}</h2>
+      <h2 style={{ textAlign: "center" }}>{truncate(title , 15)} </h2>
     </div>
   );
 }

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "../movieCard/MovieCard";
 import "./Trending.css";
+import CoustomPagination from '../pagination/CoustomPagination'
 
 function Trending() {
+  const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
 
   const fetchData = async () => {
     const url =
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`;
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`;
     const data = await fetch(url);
     const parsedData = await data.json();
     //    console.log(parsedData);
@@ -16,7 +18,8 @@ function Trending() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+    // eslint-disable-next-line
+  }, [page]);
 
   return (
     <>
@@ -39,6 +42,7 @@ function Trending() {
             )}
         </div>
       </div>
+      <CoustomPagination setPage={setPage}/>
     </>
   );
 }

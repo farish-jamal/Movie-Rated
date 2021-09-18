@@ -8,7 +8,7 @@ function CoustomPagination({setPage, numOfPages = 10}) {
     }
     return (
         <div style={{width: "100%", display: "flex", justifyContent: "center", margin: 20}}>
-            <Pagination onChange={(e) => handleClick(e.target.textContent)} count={numOfPages} color="primary" hideNextButton = 'false' hidePrevButton = 'false'/>
+            <Pagination onChange={(e) => handleClick(e.target.textContent)} count={numOfPages} color="primary" hidePrevButton hideNextButton/>
         </div>
     )
 }

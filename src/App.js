@@ -1,3 +1,5 @@
+import React, {useState} from 'react'
+import LoadingBar from 'react-top-loading-bar'
 import { Container } from "@material-ui/core";
 import "./App.css";
 import NavBarTv from "./components/NavBarTv";
@@ -9,13 +11,21 @@ import Series from "./components/pages/Series";
 import Search from "./components/pages/Search";
 
 function App() {
+  const [progress, setProgress] = useState(20);
   return (
     <BrowserRouter>
       <NavBarTv />
+    <LoadingBar
+        color= '#3f51b5'
+        progress={progress}
+        height={4}
+      />
       <div className="app">
         <Container>
           <Switch>
-            <Route path="/" component={Trending} exact />
+            <Route exact path="/">
+              <Trending setProgress={setProgress}/>
+            </Route>
             <Route path="/movies" component={Movies} />
             <Route path="/series" component={Series} />
             <Route path="/search" component={Search} />

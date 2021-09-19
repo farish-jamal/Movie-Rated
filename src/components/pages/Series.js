@@ -21,6 +21,7 @@ function Series({setProgress}) {
     };
   
     useEffect(() => {
+      window.scroll(0,0)
       fetchData();
       // eslint-disable-next-line
     }, [page]);

@@ -28,7 +28,9 @@ function App() {
             <Route path="/series">
               <Series setProgress={setProgress}/>
             </Route>
-            <Route path="/search" component={Search} />
+            <Route path="/search">
+              <Search setProgress={setProgress} />
+            </Route>
           </Switch>
         </Container>
       </div>

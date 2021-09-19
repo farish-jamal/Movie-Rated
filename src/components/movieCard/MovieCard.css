@@ -12,7 +12,9 @@
     cursor: pointer;
 }
 .movieCard:hover{
-    background-color: rgba(204, 204, 204, 0.548);
+    background-color: rgba(128, 128, 128, 0.144);
+    transform: scale(1.05);
+    transition: 0.5s;
 }
 .movieCard img{
     width: 100%;

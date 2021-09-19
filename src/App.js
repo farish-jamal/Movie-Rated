@@ -25,7 +25,9 @@ function App() {
             <Route path="/movies">
               <Movies setProgress={setProgress} />
             </Route>
-            <Route path="/series" component={Series} />
+            <Route path="/series">
+              <Series setProgress={setProgress}/>
+            </Route>
             <Route path="/search" component={Search} />
           </Switch>
         </Container>

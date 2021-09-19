@@ -10,7 +10,7 @@ function Movies({ setProgress }) {
 
   const fetchData = async () => {
     setProgress(40);
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}`;
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=f3356f78904a7602215ab2fccacb4356&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}`;
     const data = await fetch(url);
     setProgress(60);
     const parsedData = await data.json();
@@ -27,7 +27,7 @@ function Movies({ setProgress }) {
   return (
     <div>
       <>
-        <div className="pageTitle">Movies</div>
+        <div className="pageTitle">MOVIES</div>
         <div className="trending">
           <div className="trending">
             {content &&

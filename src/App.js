@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import LoadingBar from 'react-top-loading-bar'
+import React, { useState } from "react";
+import LoadingBar from "react-top-loading-bar";
 import { Container } from "@material-ui/core";
 import "./App.css";
 import NavBarTv from "./components/NavBarTv";
@@ -15,18 +15,16 @@ function App() {
   return (
     <BrowserRouter>
       <NavBarTv />
-    <LoadingBar
-        color= '#3f51b5'
-        progress={progress}
-        height={4}
-      />
+      <LoadingBar color="#3f51b5" progress={progress} height={4} />
       <div className="app">
         <Container>
           <Switch>
             <Route exact path="/">
-              <Trending setProgress={setProgress}/>
+              <Trending setProgress={setProgress} />
             </Route>
-            <Route path="/movies" component={Movies} />
+            <Route path="/movies">
+              <Movies setProgress={setProgress} />
+            </Route>
             <Route path="/series" component={Series} />
             <Route path="/search" component={Search} />
           </Switch>

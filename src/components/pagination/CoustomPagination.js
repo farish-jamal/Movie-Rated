@@ -1,7 +1,7 @@
 import React from 'react'
 import Pagination from '@mui/material/Pagination';
 
-function CoustomPagination({setPage, numOfPages = 10}) {
+function CoustomPagination({setPage, numOfPages}) {
     const handleClick = (page) => {
         window.scroll(0, 0);
         setPage(page)

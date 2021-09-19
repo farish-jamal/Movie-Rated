@@ -10,7 +10,7 @@ function Trending({ setProgress }) {
 
   const fetchData = async () => {
     setProgress(40);
-    const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`;
+    const url = `https://api.themoviedb.org/3/trending/all/day?api_key=f3356f78904a7602215ab2fccacb4356&page=${page}`;
     const data = await fetch(url);
     setProgress(60);
     const parsedData = await data.json();

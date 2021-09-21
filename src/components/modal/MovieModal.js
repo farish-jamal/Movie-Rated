@@ -80,7 +80,6 @@ export default function MovieModal({ children, media, id }) {
                   className="poster_landscape"
                 />
                 </div>
-                {/* <img src={content.backdrop_path ?`${img_300}/${content.poster_path}` : unavialable} alt={content.title} className="poster_landscape"/> */}
                 <div className="title">
                   <h3>
                     {content.title || content.name}(

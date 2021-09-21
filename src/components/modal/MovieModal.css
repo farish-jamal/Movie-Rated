@@ -1,0 +1,33 @@
+.modal{
+    display: flex;
+    align-items: center;
+    /* justify-content: center;
+    min-height: 100vh; */
+    flex-direction: column;
+}
+.poster_landscape{
+    width: 100%;
+    height: 250px;
+    margin: 0 20px;
+}
+.title{
+    text-align: center;
+    width: 80%;
+}
+h4{
+   margin: 10px 0;
+   font-size: 1.2rem;
+}
+h3{
+   margin: 10px 0;
+   font-size: 1.4rem;
+}
+@media screen and (max-width: 750px) {
+    h4{
+        font-size: 0.8rem;
+    }
+    .poster_landscape{
+        width: 90%;
+        height: 250px;
+    }
+}

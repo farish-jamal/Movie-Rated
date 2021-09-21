@@ -4,12 +4,12 @@ import { img_300, unavialable } from "../../config/config";
 import "./MovieCard.css";
 import MovieModal from '../modal/MovieModal'
 
-function MovieCard({ id, title, poster, date, media }) {
+function MovieCard({ id , title, poster, media }) {
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + " ---" : string;
   }
   return (
-    <MovieModal media={media} id={id}>
+    <MovieModal id={id} media={media}>
       <Badge
         style={{ position: "absolute", top: 10, right: 19}}
         badgeContent={media === "tv" ? "Series" : "Movie"} color="primary"

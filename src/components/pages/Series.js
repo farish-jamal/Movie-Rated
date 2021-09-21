@@ -7,6 +7,7 @@ function Series({setProgress}) {
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
     const numofPages = 500;
+    const media = 'tv'
   
     const fetchData = async () => {
       setProgress(40);
@@ -34,10 +35,11 @@ function Series({setProgress}) {
                 content.map((element) => (
                   <SingleMovie
                     key={element.id}
+                    id={element.id}
                     title={element.title || element.name}
                     poster={element.poster_path}
                     rating={element.vote_average}
-                    media={element.media_type}
+                    media={media}
                   />
                 ))}
             </div>

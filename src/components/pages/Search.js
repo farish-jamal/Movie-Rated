@@ -29,7 +29,7 @@ function Search({setProgress}) {
         // eslint-disable-next-line
     }, [type, page])
   return (
-      <div>
+      <>
     <div style={{ display: "flex", margin: "10px 0" }}>
       <TextField
         style={{ flex: 1 }}
@@ -51,20 +51,20 @@ function Search({setProgress}) {
         <Tab style={{ width : '50%'}} label="Search Series" />
       </Tabs>
       <div className="trending">
-          <div className="trending">
             {content &&
               content.map((element) => (
                 <SingleMovie
                   key={element.id}
+                  id={element.id}
                   title={element.title || element.name}
                   poster={element.poster_path}
                   rating={element.vote_average}
+                  media={type ? "tv" : "movie"}
                 />
               ))}
               {
                   !searchText && !content && (type ? <h2>Search For Series</h2> : <h2>Search for Movies</h2>)
               }
-          </div>
         </div>
         {
             numOfPages > 1 &&(
@@ -72,7 +72,7 @@ function Search({setProgress}) {
                 
             )
         }
-      </div>
+      </>
   );
 }
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -22,6 +22,27 @@ export default function MovieModal({children, media , id}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [video, setVideo] = useState([]);
+  const [content, setContent] = useState()
+
+  const fetchContent = async () => {
+     const url = `https://api.themoviedb.org/3/${media}/${id}?api_key=f3356f78904a7602215ab2fccacb4356&language=en-US`
+     const data = await fetch(url);
+     const parsedData = await data.json();
+     setContent(parsedData)
+  }
+  const fetchVideos = async () => {
+     const url = `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=f3356f78904a7602215ab2fccacb4356&language=en-US`;
+     const data = await fetch(url);
+     const parsedData = await data.json();
+     console.log(parsedData.results[0]?.key)
+  }
+
+  useEffect(() => {
+    fetchContent();
+    fetchVideos();
+    // eslint-disable-next-line
+  }, [])
 
   return (
     <>
@@ -40,7 +61,7 @@ export default function MovieModal({children, media , id}) {
         <Fade in={open}>
           <Box sx={style}>
             <div>
-              {media}
+              hello
             </div>
           </Box>
         </Fade>

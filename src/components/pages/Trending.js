@@ -3,7 +3,7 @@ import MovieCard from "../movieCard/MovieCard";
 import "./Trending.css";
 import CoustomPagination from "../pagination/CoustomPagination";
 
-function Trending({ setProgress }) {
+function Trending({ setProgress}) {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState([]);
   const numberofPages = 10;
@@ -15,7 +15,7 @@ function Trending({ setProgress }) {
     setProgress(60);
     const parsedData = await data.json();
     setProgress(80);
-    //  console.log(parsedData);
+    //  console.log(parsedData.results);
     setContent(parsedData.results);
     setProgress(100);
   };
@@ -36,6 +36,7 @@ function Trending({ setProgress }) {
               (element) => (
                 <MovieCard
                   key={element.id}
+                  id={element.id}
                   title={element.title || element.name}
                   poster={element.poster_path}
                   media={element.media_type}

@@ -15,7 +15,7 @@ function Trending({ setProgress }) {
     setProgress(60);
     const parsedData = await data.json();
     setProgress(80);
-    //    console.log(parsedData);
+    //  console.log(parsedData);
     setContent(parsedData.results);
     setProgress(100);
   };

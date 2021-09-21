@@ -28,11 +28,17 @@
     align-items: center;
     padding: 0 5px;
 }
+h2{
+    font-size: 1.2rem;
+    color: #000;
+}
 @media screen and (max-width: 1000px){
     .movieCard{
         width: 30%;
-        font-size: 0.8rem;
         margin: 10px 5px;
+    }
+    h2{
+        font-size: 1rem;
     }
 }
 @media screen and (max-width: 600px) and (min-width: 330px){
@@ -40,13 +46,19 @@
         width: 40%;
         height: 270px;
          margin: 10px 10px;
-         font-size: 0.8rem;
+    }
+    h2{
+        font-size: 0.9rem;
     }
 }
 @media screen and (max-width: 330px) and (min-width: 0px){
     .movieCard{
         width: 90%;
         height: 270px;
+        font-size: 0.2rem;
+    }
+    h2{
+        font-size: 1rem;
     }
 }
 @media screen and (max-width: 1300px) and (min-width:1000px){
@@ -54,5 +66,8 @@
         width: 25%;
         font-size: 1rem;
         margin: 10px 33px;
+    }
+    h2{
+        font-size: 1.2rem;
     }
 }

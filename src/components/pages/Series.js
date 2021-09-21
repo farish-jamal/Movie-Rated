@@ -26,7 +26,6 @@ function Series({setProgress}) {
       // eslint-disable-next-line
     }, [page]);
     return (
-        <div>
         <>
           <div className="pageTitle">SERIES</div>
           <div className="trending">
@@ -38,13 +37,13 @@ function Series({setProgress}) {
                     title={element.title || element.name}
                     poster={element.poster_path}
                     rating={element.vote_average}
+                    media={element.media_type}
                   />
                 ))}
             </div>
           </div>
           <CoustomPagination setPage={setPage} numOfPages={numofPages} />
         </>
-      </div>
     )
 }
 

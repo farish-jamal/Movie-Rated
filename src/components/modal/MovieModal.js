@@ -13,8 +13,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "80%",
-  height: "90%",
+  width: "96%",
+  height: "80%",
   backgroundColor: "background.paper",
   border: "1px solid #000",
   display: "flex",
@@ -49,6 +49,10 @@ export default function MovieModal({ children, media, id }) {
     fetchVideos();
     // eslint-disable-next-line
   }, []);
+
+  function truncate(string, n) {
+    return string?.length > n ? string.substr(0, n - 1) + " ---" : string;
+  }
 
   return (
     <>
@@ -94,7 +98,7 @@ export default function MovieModal({ children, media, id }) {
                     )
                   </h3>
                   <i>{content.tagline}</i>
-                  <h4>{content.overview}</h4>
+                  <h4>{truncate(content.overview, 550)}</h4>
                 </div>
                 <div className="button">
                   <Button
@@ -104,7 +108,7 @@ export default function MovieModal({ children, media, id }) {
                     color="error"
                     href={`https://www.youtube.com/watch?v=${video}`}
                   >
-                    GO TO YOUTUBE
+                    WATCH TRAILER
                   </Button>
                 </div>
               </div>

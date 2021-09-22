@@ -14,7 +14,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "80%",
-  height: "90%",
+  height: "80%",
   backgroundColor: "background.paper",
   border: "1px solid #000",
   display: "flex",

@@ -3,7 +3,7 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import { img_500, unavialable } from "../../config/config";
+import { img_300, img_500, unavialable } from "../../config/config";
 import { Button } from "@mui/material";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./MovieModal.css";
@@ -13,13 +13,10 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "96%",
-  height: "80%",
+  width: "80%",
+  // height: "90%",
   backgroundColor: "background.paper",
   border: "1px solid #000",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
 };
 
 export default function MovieModal({ children, media, id }) {
@@ -84,11 +81,20 @@ export default function MovieModal({ children, media, id }) {
                     alt={content.title}
                     className="poster_landscape"
                   />
+                  <img
+                    src={
+                      content.poster_path
+                        ? `${img_300}/${content.poster_path}`
+                        : unavialable
+                    }
+                    alt={content.title}
+                    className="poster_potrait"
+                  />
                 </div>
                 <div className="title">
                   <h3>
-                    {content.title || content.name}(
-                    <span>
+                    {content.title || content.name}{" "}(
+                      <span>
                       {(
                         content.first_air_date ||
                         content.release_date ||
@@ -99,7 +105,6 @@ export default function MovieModal({ children, media, id }) {
                   </h3>
                   <i>{content.tagline}</i>
                   <h4>{truncate(content.overview, 550)}</h4>
-                </div>
                 <div className="button">
                   <Button
                     variant="contained"
@@ -110,6 +115,7 @@ export default function MovieModal({ children, media, id }) {
                   >
                     WATCH TRAILER
                   </Button>
+                </div>
                 </div>
               </div>
             )}

@@ -11,12 +11,12 @@ function Movies({ setProgress }) {
 
   const fetchData = async () => {
     setProgress(40);
-    const url = `https://api.themoviedb.org/3/discover/movie/?api_key=f3356f78904a7602215ab2fccacb4356&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}`;
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=f3356f78904a7602215ab2fccacb4356&language=en-US&sort_by=popularity.desc&include_video=false&page=${page}`;
     const data = await fetch(url);
     setProgress(60);
     const parsedData = await data.json();
     setProgress(80);
-       console.log(parsedData);
+      //  console.log(parsedData);
     setContent(parsedData.results);
     setProgress(100);
   };

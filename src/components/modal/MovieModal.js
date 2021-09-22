@@ -34,7 +34,7 @@ export default function MovieModal({ children, media, id }) {
     const url = `https://api.themoviedb.org/3/${media}/${id}?api_key=f3356f78904a7602215ab2fccacb4356&language=en-US`;
     const data = await fetch(url);
     const parsedData = await data.json();
-    console.log(parsedData);
+    // console.log(parsedData);
     setContent(parsedData);
   };
   const fetchVideos = async () => {

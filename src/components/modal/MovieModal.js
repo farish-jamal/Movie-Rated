@@ -3,10 +3,10 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import {img_500, unavialable } from "../../config/config";
+import { img_500, unavialable } from "../../config/config";
 import { Button } from "@mui/material";
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import './MovieModal.css'
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import "./MovieModal.css";
 
 const style = {
   position: "absolute",
@@ -14,7 +14,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "80%",
-  height: "80%",
+  height: "90%",
   backgroundColor: "background.paper",
   border: "1px solid #000",
   display: "flex",
@@ -71,22 +71,24 @@ export default function MovieModal({ children, media, id }) {
             {content && (
               <div className="modal">
                 <div className="img">
-                <img
-                  src={
-                    content.backdrop_path
-                      ? `${img_500}/${content.backdrop_path}`
-                      : unavialable
-                  }
-                  alt={content.title}
-                  className="poster_landscape"
-                />
+                  <img
+                    src={
+                      content.backdrop_path
+                        ? `${img_500}/${content.backdrop_path}`
+                        : unavialable
+                    }
+                    alt={content.title}
+                    className="poster_landscape"
+                  />
                 </div>
                 <div className="title">
                   <h3>
                     {content.title || content.name}(
                     <span>
                       {(
-                        content.first_air_date || content.release_date
+                        content.first_air_date ||
+                        content.release_date ||
+                        "----"
                       ).substring(0, 4)}
                     </span>
                     )
@@ -95,7 +97,15 @@ export default function MovieModal({ children, media, id }) {
                   <h4>{content.overview}</h4>
                 </div>
                 <div className="button">
-                  <Button variant="contained" startIcon={<YouTubeIcon />} color="error">GO TO YOUTUBE</Button>
+                  <Button
+                    variant="contained"
+                    startIcon={<YouTubeIcon />}
+                    target="_blank"
+                    color="error"
+                    href={`https://www.youtube.com/watch?v=${video}`}
+                  >
+                    GO TO YOUTUBE
+                  </Button>
                 </div>
               </div>
             )}

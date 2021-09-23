@@ -7,7 +7,7 @@ import { img_300, img_500, unavialable } from "../../config/config";
 import { Button } from "@mui/material";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./MovieModal.css";
-
+import CarouselMovie from '../carousel/CarouselMovie'
 const style = {
   position: "absolute",
   top: "50%",
@@ -47,9 +47,9 @@ export default function MovieModal({ children, media, id }) {
     // eslint-disable-next-line
   }, []);
 
-  function truncate(string, n) {
-    return string?.length > n ? string.substr(0, n - 1) + " ---" : string;
-  }
+  // function truncate(string, n) {
+  //   return string?.length > n ? string.substr(0, n - 1) + " ---" : string;
+  // }
 
   return (
     <>
@@ -104,7 +104,10 @@ export default function MovieModal({ children, media, id }) {
                     )
                   </h3>
                   <i>{content.tagline}</i>
-                  <h4>{truncate(content.overview, 550)}</h4>
+                  <h4>{content.overview}</h4>
+                  <div className="crousel">
+                    <CarouselMovie id={id} media={media}/>
+                  </div>
                 <div className="button">
                   <Button
                     variant="contained"

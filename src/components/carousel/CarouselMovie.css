@@ -1,0 +1,13 @@
+.crouseal{
+    display:flex ;
+    flex-direction: column;
+    object-fit: contain;
+    padding: 10px;
+}
+.crouseal_img{
+    border-radius:10px ;
+    margin-bottom: 5px;
+}
+b{
+    font-size: 0.8rem;
+}
